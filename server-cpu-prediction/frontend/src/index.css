@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg text-text-primary font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111C2E;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2D4A6E;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3B82F6;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card border border-card-border rounded-xl p-5;
+  }
+
+  .stat-card {
+    @apply card flex flex-col gap-1;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-blue-500 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors duration-150;
+  }
+
+  .btn-secondary {
+    @apply bg-card-border hover:bg-blue-900/40 text-text-primary font-medium px-4 py-2 rounded-lg transition-colors duration-150;
+  }
+
+  .input-field {
+    @apply bg-bg border border-card-border rounded-lg px-3 py-2 text-text-primary text-sm focus:outline-none focus:border-primary transition-colors duration-150 w-full;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer text-text-secondary hover:text-text-primary hover:bg-card-border transition-all duration-150 text-sm font-medium;
+  }
+
+  .nav-item.active {
+    @apply text-primary bg-blue-900/30 border border-blue-800/40;
+  }
+
+  .badge-normal {
+    @apply bg-green-900/40 text-success border border-green-700/40 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-warning {
+    @apply bg-amber-900/40 text-warning border border-amber-700/40 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-critical {
+    @apply bg-red-900/40 text-danger border border-red-700/40 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+}
